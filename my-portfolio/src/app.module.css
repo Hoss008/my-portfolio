@@ -1,7 +1,21 @@
-.header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #e32121;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap");
+
+body {
+  background-color: black;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+
+  align-items: center;
+
+  height: 92px;
+
+  padding-inline: 48px;
+  padding-block: 24px;
+
+  gap: 24px;
 }
