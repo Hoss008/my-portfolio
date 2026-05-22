@@ -6,6 +6,18 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+/* Add these new classes to app.module.css */
+
+.pageWrapper {
+  min-height: 100vh; /* Ensures the container is always at least the height of the viewport */
+  display: flex;
+  flex-direction: column;
+}
+
+.mainContent {
+  flex-grow: 1; /* Forces the middle section to expand, pushing the footer to the bottom */
+}
+
 .header {
   display: grid;
   grid-template-columns: auto auto auto auto;
@@ -50,4 +62,26 @@ body {
   height: 41px;
   gap: 10px;
   padding: 0 16px;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 204px 204px 204px 660px;
+  align-items: center;
+  height: 269px;
+  margin-top: 0px;
+  padding-inline: 48px;
+  padding-block: 24px;
+  gap: 24px;
+}
+
+.p {
+  grid-column: 1 / span 3;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  width: 536px;
+  height: 210px;
 }

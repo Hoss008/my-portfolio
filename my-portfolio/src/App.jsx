@@ -4,7 +4,7 @@ import arrow from "./assets/arrow.svg";
 
 function App() {
   return (
-    <>
+    <div className={styles.pageWrapper}>
       <header className={styles.header}>
         <div className={styles.left}>
           <img src={logo} alt="Hossam Logo" />
@@ -20,7 +20,19 @@ function App() {
           <img src={arrow} alt="Arrow" />
         </button>
       </header>
-    </>
+
+      {/* This main tag will absorb the empty space in the middle */}
+      <main className={styles.mainContent}></main>
+
+      <footer className={styles.footer}>
+        <p className={styles.p}>
+          It’s Hossam Hassan! <br />
+            A react developer & founder of NORQUE STUDIOS™. I
+          build fast, polished interfaces — clean architecture, smooth
+          animations, and pixel-perfect Figma handoffs.
+        </p>
+      </footer>
+    </div>
   );
 }
 
