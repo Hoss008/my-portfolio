@@ -1,5 +1,6 @@
 import styles from "./app.module.css";
 import logo from "./assets/Hossam Logo 1.svg";
+import arrow from "./assets/arrow.svg";
 
 function App() {
   return (
@@ -7,14 +8,17 @@ function App() {
       <header className={styles.header}>
         <div className={styles.left}>
           <img src={logo} alt="Hossam Logo" />
-          <span>11:26 PM CAIRO, EGYPT</span>
+          <span className={styles.text}>11:26 PM CAIRO, EGYPT</span>
         </div>
 
         <div className={styles.spacer}></div>
 
         <div className={styles.title}>PERSONAL PORTFOLIO</div>
 
-        <div className={styles.cta}>LET'S TALK NOW</div>
+        <button className={styles.talk}>
+          LET'S TALK NOW
+          <img className={styles.arrow} src={arrow} alt="Arrow" />
+        </button>
       </header>
     </>
   );
