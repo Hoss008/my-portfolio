@@ -1,6 +1,10 @@
+import styles from './app.module.css';
+import 
+
 function App() {
   return <>
-  hello world
+  <header className={styles.header}></header> 
+
   </>;
 }
 
