@@ -26,12 +26,18 @@ function App() {
 
       <footer className={styles.footer}>
         <p className={styles.p}>
-          It’s Hossam Hassan! <br />
-            A react developer & founder of NORQUE STUDIOS™. I
-          build fast, polished interfaces — clean architecture, smooth
-          animations, and pixel-perfect Figma handoffs.
+          It’s Hossam ! <br />a front end developer & founder of NORQUE
+          STUDIOS™. I build fast, polished interfaces — clean architecture,
+          smooth animations, and pixel-perfect Figma handoffs.
         </p>
       </footer>
+
+      <div className={styles.footerBottom}>
+        <span className={styles.footerLink}>↘ LINKED IN</span>
+        <span className={styles.footerLink}>↘ GITHUB</span>
+        <span className={styles.footerLink}>↘ RESUME</span>
+        <span className={styles.footerRights}>ALL RIGHTS RESERVED</span>
+      </div>
     </div>
   );
 }
