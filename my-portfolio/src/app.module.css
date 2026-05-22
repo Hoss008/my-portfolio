@@ -37,17 +37,17 @@ body {
 }
 
 .talk {
-  font-family: "Roboto", sans-serif;
-}
-
-.arrow {
-  width: 21px;
-  height: 21px;
-}
-
-.condensed {
   font-family: "Roboto Condensed", sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-self: end;
+  border-radius: 4px;
+  border: 1px solid white;
+  max-width: 188px;
+  height: 41px;
+  gap: 10px;
+  padding: 0 16px;
 }

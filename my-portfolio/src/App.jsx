@@ -17,7 +17,7 @@ function App() {
 
         <button className={styles.talk}>
           LET'S TALK NOW
-          <img className={styles.arrow} src={arrow} alt="Arrow" />
+          <img src={arrow} alt="Arrow" />
         </button>
       </header>
     </>
