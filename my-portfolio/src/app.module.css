@@ -67,12 +67,13 @@ body {
 .footer {
   display: grid;
   grid-template-columns: 204px 204px 204px 660px;
-  align-items: center;
-  height: 269px;
-  margin-top: 0px;
+  grid-template-rows: 1fr auto; /* Creates a top row that expands, and an auto-sized bottom row for the links */
+  height: 240px;
+  margin-top: auto;
   padding-inline: 48px;
   padding-block: 24px;
   gap: 24px;
+  /* Removed align-items: center; so the top text doesn't float in the middle */
 }
 
 .p {
@@ -83,5 +84,27 @@ body {
   line-height: 100%;
   letter-spacing: 0%;
   width: 536px;
-  height: 210px;
+  margin: 0;
+  /* Removed height: 210px; so it sits naturally at the top */
 }
+
+.footerBottom {
+  display: grid;
+  grid-column: 1 / -1; /* Tells this row to span across all 4 columns */
+  grid-template-columns: subgrid; /* Magically inherits the 204, 204, 204, 660 tracks from .footer */
+  font-family: "Roboto Mono", monospace;
+  font-size: 14px;
+  color: #888888;
+  align-items: end; /* Snaps the links flush to the bottom */
+}
+
+.footerLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-color: #555555;
+  cursor: pointer;
+}
+
