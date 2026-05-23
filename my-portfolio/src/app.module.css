@@ -1,28 +1,41 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&family=Roboto+Condensed:wght@400;500;600;700&display=swap");
 
+/* 1. ADDED GLOBAL RESET: Prevents default margins from pushing your 100vh layout off-screen */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
 body {
   background-color: black;
   color: white;
   font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
 }
 
-/* Add these new classes to app.module.css */
-
 .pageWrapper {
-  min-height: 100vh; /* Ensures the container is always at least the height of the viewport */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  width: min(100%, 1440px);
+  margin: 0 auto;
 }
 
 .mainContent {
-  flex-grow: 1; /* Forces the middle section to expand, pushing the footer to the bottom */
+  flex-grow: 1;
 }
 
 .header {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
-  height: 44px;
+  height: auto; /* Removed fixed 44px height to prevent vertical overlapping */
   padding-inline: 48px;
   padding-block: 24px;
   gap: 24px;
@@ -37,6 +50,7 @@ body {
   display: flex;
   align-items: center;
   gap: 24px;
+  min-width: 0;
 }
 
 .title {
@@ -46,6 +60,8 @@ body {
   line-height: 100%;
   letter-spacing: 0%;
   text-transform: uppercase;
+  justify-self: center;
+  text-align: center;
 }
 
 .talk {
@@ -58,22 +74,23 @@ body {
   justify-self: end;
   border-radius: 4px;
   border: 1px solid white;
-  max-width: 188px;
   height: 41px;
   gap: 10px;
   padding: 0 16px;
+  cursor: pointer;
+  white-space: nowrap;
 }
 
 .footer {
   display: grid;
-  grid-template-columns: 204px 204px 204px 660px;
-  grid-template-rows: 1fr auto; /* Creates a top row that expands, and an auto-sized bottom row for the links */
+  /* 3. FIXED FOOTER WIDTH: Changed 660px to 1fr so it stops overflowing off the right edge */
+  grid-template-columns: minmax(0, 204px) minmax(0, 204px) minmax(0, 204px) minmax(0, 660px);
+  grid-template-rows: 1fr auto;
   height: 240px;
   margin-top: auto;
   padding-inline: 48px;
   padding-block: 24px;
-  gap: 24px;
-  /* Removed align-items: center; so the top text doesn't float in the middle */
+  gap: 14px;
 }
 
 .p {
@@ -83,19 +100,28 @@ body {
   font-size: 30px;
   line-height: 100%;
   letter-spacing: 0%;
-  width: 536px;
+  width: 100%; /* Removed hardcoded 536px width */
+  max-width: 536px;
   margin: 0;
-  /* Removed height: 210px; so it sits naturally at the top */
 }
 
 .footerBottom {
   display: grid;
-  grid-column: 1 / -1; /* Tells this row to span across all 4 columns */
-  grid-template-columns: subgrid; /* Magically inherits the 204, 204, 204, 660 tracks from .footer */
+  grid-column: 1 / -1;
+  /* Match the parent footer columns */
+  grid-template-columns: minmax(0, 204px) minmax(0, 204px) minmax(0, 204px) minmax(0, 660px);
+  gap: 14px; /* Matched the gap of the parent footer grid */
   font-family: "Roboto Mono", monospace;
   font-size: 14px;
   color: #888888;
-  align-items: end; /* Snaps the links flush to the bottom */
+  align-items: end;
+}
+
+/* 4. CLEANUP: Removed the duplicate .footerLinks declaration */
+.footerLinks {
+  grid-column: 1 / span 3;
+  display: flex;
+  gap: 48px;
 }
 
 .footerLink {
@@ -108,3 +134,9 @@ body {
   cursor: pointer;
 }
 
+.inlineLink {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 1px;
+  text-decoration-color: #ffffff;
+}
