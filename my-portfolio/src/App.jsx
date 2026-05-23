@@ -18,7 +18,7 @@ function App() {
     const update = () => setTime(formatTime(new Date()));
 
     update();
-    const intervalId = setInterval(update, 60000);
+    const intervalId = setInterval(update, 10000);
 
     return () => clearInterval(intervalId);
   }, []);
@@ -28,7 +28,7 @@ function App() {
       <header className={styles.header}>
         <div className={styles.left}>
           <img src={logo} alt="Hossam Logo" />
-          <span className={styles.text}>{time} CAIRO, EGYPT</span>
+          <span className={styles.text}>{time} CAI, EGYPT</span>
         </div>
 
         <div className={styles.title}>PERSONAL PORTFOLIO</div>
