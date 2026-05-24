@@ -53,6 +53,12 @@ body {
   min-width: 0;
 }
 
+.locationGroup {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
 .title {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -83,7 +89,10 @@ body {
 
 .footer {
   display: grid;
-  grid-template-columns: minmax(0, 204px) minmax(0, 204px) minmax(0,204px) minmax(0, 660px);
+  grid-template-columns: minmax(0, 204px) minmax(0, 204px) minmax(
+      0,
+      204px
+    ) minmax(0, 660px);
   grid-template-rows: 1fr auto;
   height: 240px;
   margin-top: auto;
@@ -107,7 +116,10 @@ body {
 .footerBottom {
   display: grid;
   grid-column: 1 / -1;
-  grid-template-columns: minmax(0, 204px) minmax(0, 204px) minmax(0,204px) minmax(0, 660px);
+  grid-template-columns: minmax(0, 204px) minmax(0, 204px) minmax(
+      0,
+      204px
+    ) minmax(0, 660px);
   gap: 14px;
   font-family: "Roboto Mono", monospace;
   font-size: 14px;
