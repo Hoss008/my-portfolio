@@ -42,9 +42,9 @@ function App() {
 
       <main className={styles.mainContent}>
         {" "}
-        TODO
+        {/* TODO
         <li>skills</li>
-        <li>lets talk button ? mail & phone number ?</li>
+        <li>lets talk button ? mail & phone number ?</li> */}
       </main>
 
       <footer className={styles.footer}>
