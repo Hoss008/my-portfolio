@@ -10,15 +10,16 @@ function App() {
   useEffect(() => {
     const formatTime = (date) =>
       date.toLocaleTimeString("en-US", {
-        hour: "2-digit",
+        hour: "numeric",
         minute: "2-digit",
+        second: "2-digit",
         hour12: true,
       });
 
     const update = () => setTime(formatTime(new Date()));
 
     update();
-    const intervalId = setInterval(update, 10000);
+    const intervalId = setInterval(update, 1000);
 
     return () => clearInterval(intervalId);
   }, []);
@@ -39,7 +40,12 @@ function App() {
         </button>
       </header>
 
-      <main className={styles.mainContent}></main>
+      <main className={styles.mainContent}>
+        {" "}
+        TODO
+        <li>skills</li>
+        <li>lets talk button ? mail & phone number ?</li>
+      </main>
 
       <footer className={styles.footer}>
         <p className={styles.p}>
