@@ -34,8 +34,8 @@ function App() {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 256 256"
-              width="20"
-              height="20"
+              width="18"
+              height="18"
               fill="#888888"
               style={{ flexShrink: 0 }}
             >
