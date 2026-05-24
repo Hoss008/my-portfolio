@@ -59,6 +59,7 @@ function App() {
         {/* TODO
         <li>skills</li>
         loading screen ?</li>
+        broswer tab icon ?</li>
         <li>lets talk button ? mail & phone number ?</li> */}
       </main>
 
