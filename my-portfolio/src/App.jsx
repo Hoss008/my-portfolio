@@ -35,7 +35,7 @@ function App() {
         <div className={styles.title}>PERSONAL PORTFOLIO</div>
 
         <button className={styles.talk}>
-          LET'S TALK NOW
+            GET IN TOUCH
           <img src={arrow} alt="Arrow" />
         </button>
       </header>
