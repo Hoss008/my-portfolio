@@ -1,11 +1,24 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import styles from "./app.module.css";
 import logo from "./assets/Hossam Logo 1.svg";
 import arrow from "./assets/arrow.svg";
 import down from "./assets/down.svg";
+import hoverSound from "./assets/zapsplatt.wav";
 
 function App() {
   const [time, setTime] = useState("");
+  const audioRef = useRef(new Audio(hoverSound));
+
+  const playHoverSound = useCallback(() => {
+    const audio = audioRef.current;
+    audio.volume = 0.2; 
+    audio.currentTime = 0;
+    audio.play().catch((err) => console.log("Audio play failed:", err));
+    // Stop the sound after 200ms to make it shorter
+    setTimeout(() => {
+      audio.pause();
+    }, 50);
+  }, []);
 
   useEffect(() => {
     const formatTime = (date) =>
@@ -34,8 +47,8 @@ function App() {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 256 256"
-              width="18"
-              height="18"
+              width="16"
+              height="16"
               fill="#888888"
               style={{ flexShrink: 0 }}
             >
@@ -78,6 +91,66 @@ function App() {
           . I build fast, polished interfaces with clean architecture, smooth
           animations, and maintainable code.
         </p>
+
+        <div className={styles.brandsSection}>
+          <h3 className={styles.brandsTitle}>projects i’ve worked with</h3>
+          <ul className={styles.brandsList}>
+            <li className={styles.brandItem} onMouseEnter={playHoverSound}>
+              <span>NORQUE STUDIOS™</span>
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 11L11 1M11 1H3M11 1V9"
+                  stroke="white"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </li>
+            <li className={styles.brandItem} onMouseEnter={playHoverSound}>
+              <span>Fusion Form®</span>
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 11L11 1M11 1H3M11 1V9"
+                  stroke="white"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </li>
+            <li className={styles.brandItem} onMouseEnter={playHoverSound}>
+              <span>Moud™</span>
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 11L11 1M11 1H3M11 1V9"
+                  stroke="white"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </li>
+          </ul>
+        </div>
 
         {/* Added Footer Bottom Links */}
         <div className={styles.footerBottom}>
