@@ -4,6 +4,7 @@ import logo from "./assets/Hossam Logo 1.svg";
 import arrow from "./assets/arrow.svg";
 import down from "./assets/down.svg";
 import hoverSound from "./assets/zapsplatt.wav";
+import resume from "./assets/Hossam Hassan.pdf";
 
 function App() {
   const [time, setTime] = useState("");
@@ -11,7 +12,7 @@ function App() {
 
   const playHoverSound = useCallback(() => {
     const audio = audioRef.current;
-    audio.volume = 0.2; 
+    audio.volume = 0.2;
     audio.currentTime = 0;
     audio.play().catch((err) => console.log("Audio play failed:", err));
     // Stop the sound after 200ms to make it shorter
@@ -155,20 +156,34 @@ function App() {
         {/* Added Footer Bottom Links */}
         <div className={styles.footerBottom}>
           <div className={styles.footerLinks}>
-            <span className={styles.footerLink}>
+            <a
+              className={styles.footerLink}
+              href="https://www.linkedin.com/in/hossam-hassan80/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img src={down} alt="Down" />
               LINKED IN
-            </span>
-            <span className={styles.footerLink}>
+            </a>
+            <a
+              className={styles.footerLink}
+              href="https://github.com/Hoss008"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img src={down} alt="Down" />
               GITHUB
-            </span>
-            <span className={styles.footerLink}>
+            </a>
+            <a
+              className={styles.footerLink}
+              href={resume}
+              target="_blank"
+              rel="noreferrer"
+            >
               <img src={down} alt="Down" />
               RESUME
-            </span>
+            </a>
           </div>
-          {/* <span>ALL RIGHTS RESERVED</span> */}
         </div>
       </footer>
     </div>
