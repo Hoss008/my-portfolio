@@ -62,7 +62,12 @@ function App() {
 
         <div className={styles.title}>PERSONAL PORTFOLIO</div>
 
-        <button className={styles.talk}>
+        <button
+          className={styles.talk}
+          onClick={() =>
+            (window.location.href = "mailto:hossamhassan2001.hh@gmail.com")
+          }
+        >
           GET IN TOUCH
           <img src={arrow} alt="Arrow" />
         </button>
@@ -73,8 +78,7 @@ function App() {
         {/* TODO
         <li>skills</li>
         loading screen ?</li>
-        broswer tab icon ?</li>
-        <li>lets talk button ? mail & phone number ?</li> */}
+        broswer tab icon ?</li> */}
       </main>
 
       <footer className={styles.footer}>
@@ -94,9 +98,15 @@ function App() {
         </p>
 
         <div className={styles.brandsSection}>
-          <h3 className={styles.brandsTitle}>projects i’ve worked with</h3>
+          <h3 className={styles.brandsTitle}>projects I’ve Built</h3>
           <ul className={styles.brandsList}>
-            <li className={styles.brandItem} onMouseEnter={playHoverSound}>
+            <li
+              className={styles.brandItem}
+              onMouseEnter={playHoverSound}
+              onClick={() =>
+                window.open("https://norquestudios.com", "_blank")
+              }
+            >
               <span>NORQUE STUDIOS™</span>
               <svg
                 width="12"
