@@ -211,3 +211,138 @@ body {
 .brandItem:hover svg {
   transform: translate(2px, -2px);
 }
+
+
+/* =========================================
+   TABLET (8-COLUMN GRID)
+   Max-width: 1024px
+========================================= */
+@media (max-width: 1024px) {
+  .header {
+    grid-template-columns: repeat(8, 1fr);
+    padding-inline: 32px;
+  }
+
+  .left {
+    grid-column: 1 / 5; /* Takes up 4 of the 8 columns */
+  }
+
+  .title {
+    grid-column: 5 / 8; /* Shifts title placement */
+  }
+
+  .footer {
+    /* Converts custom sizing to an even 8-column grid */
+    grid-template-columns: repeat(8, 1fr);
+    padding-inline: 32px;
+  }
+
+  .p, 
+  .footerBottom {
+    grid-column: 1 / 5; /* Left content takes up 4 columns */
+  }
+
+  .brandsSection {
+    grid-column: 5 / -1; /* Projects take up the remaining 4 columns */
+  }
+}
+
+/* =========================================
+   MOBILE (MAX-WIDTH: 767px)
+========================================= */
+@media (max-width: 767px) {
+  /* --- HEADER UPDATES --- */
+  /* --- HEADER UPDATES --- */
+  .header {
+    display: grid;
+    grid-template-columns: 1fr auto; 
+    row-gap: 20px; /* Breating room between the top and bottom rows */
+    padding-inline: 16px;
+    padding-block: 24px;
+    align-items: center;
+  }
+
+  /* "display: contents" makes the .left wrapper disappear from the grid layout, 
+     allowing us to place the Logo and Time entirely independently! */
+  .left {
+    display: contents; 
+  }
+
+  .left > img {
+    grid-column: 1; /* Places Logo Top Left */
+    grid-row: 1;
+    max-width: 110px; /* Keeps the logo proportional for mobile */
+  }
+
+  .talk {
+    grid-column: 2; /* Places Button Top Right */
+    grid-row: 1;
+    height: 32px; 
+    font-size: 11px; 
+    padding: 0 12px; 
+    gap: 6px; 
+  }
+
+  .talk img {
+    width: 10px; 
+  }
+
+  .title {
+    display: block; 
+    grid-column: 1; /* Places Title Bottom Left */
+    grid-row: 2;
+    font-size: 11px; 
+    color: #888888; /* Changing to grey to match the time makes it look highly cohesive */
+    margin-left: 0; /* Removes the desktop margin */
+    letter-spacing: 0.05em;
+  }
+
+  .locationGroup {
+    grid-column: 2; /* Places Time Bottom Right */
+    grid-row: 2;
+    justify-self: end; /* Snaps it flush to the right edge */
+    gap: 6px;
+  }
+
+  .text {
+    font-size: 11px;
+    white-space: nowrap; 
+  }
+
+  .locationGroup svg {
+    width: 12px; 
+    height: 12px;
+  }
+
+  /* --- FOOTER UPDATES (Kept from previous step) --- */
+  .footer {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto auto; 
+    padding-inline: 16px;
+    padding-bottom: 32px;
+    gap: 40px; 
+    align-items: start; 
+  }
+
+  .p {
+    grid-column: 1 / -1; 
+    font-size: 24px; 
+    margin-bottom: 0;
+  }
+
+  .brandsSection {
+    grid-column: 1 / -1; 
+    grid-row: auto; 
+    align-self: start; 
+  }
+
+  .footerBottom {
+    grid-column: 1 / -1; 
+    margin-top: 16px;
+  }
+
+  .footerLinks {
+    flex-direction: column; 
+    gap: 16px;
+  }
+}

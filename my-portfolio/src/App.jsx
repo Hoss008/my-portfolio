@@ -7,8 +7,14 @@ import hoverSound from "./assets/zapsplatt.wav";
 import resume from "./assets/Hossam Hassan.pdf";
 import { motion, AnimatePresence } from "framer-motion";
 
+{
+  /* TODO
+          mail icon 
+          broswer tab icon ?</li> */
+}
+
 function App() {
-const [audioUnlocked, setAudioUnlocked] = useState(false); 
+  const [audioUnlocked, setAudioUnlocked] = useState(false);
   // 1. ADDED: Global loading state
   const [isLoading, setIsLoading] = useState(true);
   const [time, setTime] = useState("");
@@ -26,16 +32,19 @@ const [audioUnlocked, setAudioUnlocked] = useState(false);
   }, []);
 
   const unlockAudio = useCallback(() => {
-  if (audioUnlocked) return;
-  const audio = audioRef.current;
-  audio.volume = 0;
-  audio.play().then(() => {
-    audio.pause();
-    audio.currentTime = 0;
-    audio.volume = 0.2;
-    setAudioUnlocked(true);
-  }).catch(() => {});
-}, [audioUnlocked]);
+    if (audioUnlocked) return;
+    const audio = audioRef.current;
+    audio.volume = 0;
+    audio
+      .play()
+      .then(() => {
+        audio.pause();
+        audio.currentTime = 0;
+        audio.volume = 0.2;
+        setAudioUnlocked(true);
+      })
+      .catch(() => {});
+  }, [audioUnlocked]);
 
   // 2. ADDED: Initial Load Effect
   useEffect(() => {
@@ -72,14 +81,15 @@ const [audioUnlocked, setAudioUnlocked] = useState(false);
 
   return (
     <>
-      {/* 3. ADDED: Framer Motion AnimatePresence Loader */}
       <AnimatePresence>
         {isLoading && (
           <motion.div
             key="loader"
             initial={{ opacity: 1 }}
-            exit={{ opacity: 0, y: -40 }} // Slides up slightly as it fades out
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }} // Premium ease curve
+            // 1. The "Curtain Pull": Slides the entire black screen up and away
+            exit={{ y: "-100vh", opacity: 0 }}
+            // 2. The Golden Curve: A signature easing bezier used in high-end UI
+            transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
             style={{
               position: "fixed",
               top: 0,
@@ -93,19 +103,21 @@ const [audioUnlocked, setAudioUnlocked] = useState(false);
               zIndex: 9999,
             }}
           >
-            {/* Uses your imported logo for a clean brand moment */}
             <motion.img
               src={logo}
               alt="Hossam Logo"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
+              // 3. Photographic Entrance: Adds a subtle blur that snaps into focus
+              initial={{ opacity: 0, scale: 0.9, filter: "blur(10px)" }}
+              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+              // 4. Parallax Exit: The logo sinks back and blurs out just before the curtain pulls up
+              exit={{ opacity: 0, scale: 0.95, y: -20, filter: "blur(5px)" }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             />
           </motion.div>
         )}
       </AnimatePresence>
 
-      <div className={styles.pageWrapper}onMouseMove={unlockAudio} onClick={unlockAudio} >
+      <div className={styles.pageWrapper}>
         <header className={styles.header}>
           <div className={styles.left}>
             <img src={logo} alt="Hossam Logo" />
@@ -139,13 +151,7 @@ const [audioUnlocked, setAudioUnlocked] = useState(false);
           </button>
         </header>
 
-        <main className={styles.mainContent}>
-          {" "}
-          {/* TODO
-          mail icon 
-          loading screen ?</li>
-          broswer tab icon ?</li> */}
-        </main>
+        <main className={styles.mainContent}> </main>
 
         <footer className={styles.footer}>
           <p className={styles.p}>
