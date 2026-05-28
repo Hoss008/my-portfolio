@@ -103,11 +103,9 @@ function App() {
             <li
               className={styles.brandItem}
               onMouseEnter={playHoverSound}
-              onClick={() =>
-                window.open("https://norquestudios.com", "_blank")
-              }
+              onClick={() => window.open("https://norquestudios.com", "_blank")}
             >
-              <span>NORQUE STUDIOS™</span>
+              <span>Norque Studios™</span>
               <svg
                 width="12"
                 height="12"
@@ -142,8 +140,89 @@ function App() {
                 />
               </svg>
             </li>
-            <li className={styles.brandItem} onMouseEnter={playHoverSound}>
+            {/* <li className={styles.brandItem} onMouseEnter={playHoverSound}>
               <span>Moud™</span>
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 11L11 1M11 1H3M11 1V9"
+                  stroke="white"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </li> */}
+            <li
+              onClick={() =>
+                window.open(
+                  "https://github.com/Hoss008/clinicly-frontend",
+                  "_blank",
+                )
+              }
+              className={styles.brandItem}
+              onMouseEnter={playHoverSound}
+            >
+              <span>Clinicly Web</span>
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 11L11 1M11 1H3M11 1V9"
+                  stroke="white"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </li>
+            <li
+              onClick={() =>
+                window.open(
+                  "https://github.com/Hoss008/react-ecommerce-project",
+                  "_blank",
+                )
+              }
+              className={styles.brandItem}
+              onMouseEnter={playHoverSound}
+            >
+              <span>React E-Commerce</span>
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 11L11 1M11 1H3M11 1V9"
+                  stroke="white"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </li>
+            <li
+              onClick={() =>
+                window.open(
+                  "https://github.com/Hoss008/invoice-system-for-my-agency",
+                  "_blank",
+                )
+              }
+              className={styles.brandItem}
+              onMouseEnter={playHoverSound}
+            >
+              <span>Invoicing SaaS</span>
               <svg
                 width="12"
                 height="12"

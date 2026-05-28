@@ -11,7 +11,7 @@
 
 html,
 body {
-  background-color: #121212;
+  background-color: #000000;
   color: white;
   font-family: "Roboto", sans-serif;
   min-height: 100vh;
@@ -94,11 +94,14 @@ body {
     minmax(0, 204px) minmax(0, 204px) minmax(0, 204px)
     minmax(0, 660px);
   grid-template-rows: 1fr auto;
-  height: 240px;
-  margin-bottom: 1rem;
+  gap: 14px;
   padding-inline: 48px;
   padding-block: 12px;
-  gap: 14px;
+  
+  /* --- UPDATE THESE LINES --- */
+  height: auto;          /* Changed from 240px so the 6 projects fit naturally */
+  padding-bottom: 48px;  /* Replaces the margin with internal padding to prevent scroll */
+  align-items: end;
 }
 
 .p {
@@ -111,19 +114,19 @@ body {
   width: 100%;
   max-width: 536px;
   margin: 0;
+  align-self: end;      /* Pushes the text down to meet the links */
+  margin-bottom: 1rem;  /* Adjust this number to get the exact gap you want */
+  
 }
 
 .footerBottom {
-  display: grid;
-  grid-column: 1 / -1;
-  grid-template-columns:
-    minmax(0, 204px) minmax(0, 204px) minmax(0, 204px)
-    minmax(0, 660px);
-  gap: 14px;
-  font-family: "Roboto Mono", monospace;
-  font-size: 14px;
-  color: #888888;
-  align-items: end;
+  display: flex;           /* Simplified from grid */
+  grid-column: 1 / span 3; /* Restricts the container to the left side */
+  gap: 14px;               /*[cite: 2] */
+  font-family: "Roboto Mono", monospace; /*[cite: 2] */
+  font-size: 14px;         /*[cite: 2] */
+  color: #888888;          /*[cite: 2] */
+  align-items: end;        /*[cite: 2] */
 }
 
 .footerLinks {
@@ -152,12 +155,13 @@ body {
 
 /* --- BRANDS SECTION --- */
 .brandsSection {
-  grid-column: 4; /* Places it securely in the rightmost 660px column */
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  grid-column: 4;   /*[cite: 2] */
+  grid-row: 1 / -1; /* Spans all rows to reach the absolute bottom */
+  display: flex;    /*[cite: 2] */
+  flex-direction: column; /*[cite: 2] */
+  gap: 12px;        /*[cite: 2] */
+  align-self: end;  /* Snaps it flush to the bottom */
 }
-
 .brandsTitle {
   font-family: "Roboto", sans-serif;
   font-size: 12px;
