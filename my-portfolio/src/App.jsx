@@ -76,7 +76,7 @@ function App() {
       <main className={styles.mainContent}>
         {" "}
         {/* TODO
-        <li>skills</li>
+        mail icon 
         loading screen ?</li>
         broswer tab icon ?</li> */}
       </main>
@@ -84,7 +84,7 @@ function App() {
       <footer className={styles.footer}>
         <p className={styles.p}>
           It’s Hossam! <br />
-          Front-End Developer & Founder of{" "}
+          Frontend Developer & Co-Founder of{" "}
           <a
             className={styles.inlineLink}
             href="https://norquestudios.com/"

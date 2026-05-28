@@ -95,7 +95,7 @@ body {
     minmax(0, 660px);
   grid-template-rows: 1fr auto;
   height: 240px;
-  margin-top: auto;
+  margin-bottom: 1rem;
   padding-inline: 48px;
   padding-block: 12px;
   gap: 14px;
