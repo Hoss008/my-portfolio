@@ -262,6 +262,7 @@ body {
     padding-inline: 16px;
     padding-block: 24px;
     align-items: center;
+    padding-bottom: 1.5rem;
   }
 
   /* "display: contents" makes the .left wrapper disappear from the grid layout, 
