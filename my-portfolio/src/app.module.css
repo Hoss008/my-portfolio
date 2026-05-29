@@ -252,7 +252,7 @@ body {
 /* =========================================
    MOBILE (MAX-WIDTH: 767px)
 ========================================= */
-@media (max-width: 402px) {
+@media (max-width: 767px) {
   /* --- HEADER UPDATES --- */
   /* --- HEADER UPDATES --- */
   .header {
@@ -262,7 +262,7 @@ body {
     padding-inline: 16px;
     padding-block: 24px;
     align-items: center;
-    padding-top: 3rem;
+    /* padding-top: 3rem; */
   }
 
   /* "display: contents" makes the .left wrapper disappear from the grid layout, 
