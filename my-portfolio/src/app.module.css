@@ -313,16 +313,6 @@ body {
   filter: brightness(0);
 }
 
-  /* .talk:hover,
-  .talk:focus,
-  .talk:active,
-  .talk:visited {
-    background-color: transparent;
-    color: #ffffff;
-    border-color: #ffffff;
-    outline: none;
-  } */
-
   .talk img {
     width: 10px;
     height: 10px;
@@ -383,7 +373,7 @@ body {
 
   .footerBottom {
     grid-column: 1 / -1;
-    margin-top: 16px;
+    margin-top: 10px;
     padding-bottom: 2rem;
   }
 
