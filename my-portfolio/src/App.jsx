@@ -46,7 +46,7 @@ function App() {
   useEffect(() => {
     const handleComplete = () => {
       // 800ms delay ensures the loader doesn't violently flash on fast connections
-      setTimeout(() => setIsLoading(false), 1800);
+      setTimeout(() => setIsLoading(false), 1600);
     };
 
     if (document.readyState === "complete") {
@@ -115,11 +115,11 @@ function App() {
                 variableSpeed={{
                   min: 40,
                   max: 100,
-                }} /* Slow, thoughtful human typing */
-                deletingSpeed={30} /* Smooth but deliberate erasing */
-                pauseDuration={2500} /* Long pause to let the words sink in */
+                }}
+                deletingSpeed={30} 
+                pauseDuration={2500} 
                 showCursor={true}
-                cursorCharacter="|"
+                cursorCharacter="_"
                 cursorBlinkDuration={0.8} /* Slightly slower, relaxed blink */
               />
             </motion.div>
@@ -152,6 +152,7 @@ function App() {
 
           <button
             className={styles.talk}
+            onMouseEnter={playHoverSound}
             onClick={() =>
               (window.location.href = "mailto:hossamhassan2001.hh@gmail.com")
             }
