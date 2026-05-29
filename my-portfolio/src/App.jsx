@@ -2,16 +2,12 @@ import { useEffect, useState, useRef, useCallback } from "react";
 import styles from "./app.module.css";
 import logo from "./assets/Hossam Logo 1.svg";
 import arrow from "./assets/arrow.svg";
+import mail from "./assets/mail.svg";
 import down from "./assets/down.svg";
 import hoverSound from "./assets/zapsplatt.wav";
 import resume from "./assets/Hossam Hassan.pdf";
 import { motion, AnimatePresence } from "framer-motion";
-
-{
-  /* TODO
-          mail icon 
-          broswer tab icon ?</li> */
-}
+import TextType from "../Animation";
 
 function App() {
   const [audioUnlocked, setAudioUnlocked] = useState(false);
@@ -50,7 +46,7 @@ function App() {
   useEffect(() => {
     const handleComplete = () => {
       // 800ms delay ensures the loader doesn't violently flash on fast connections
-      setTimeout(() => setIsLoading(false), 800);
+      setTimeout(() => setIsLoading(false), 1800);
     };
 
     if (document.readyState === "complete") {
@@ -103,16 +99,30 @@ function App() {
               zIndex: 9999,
             }}
           >
-            <motion.img
-              src={logo}
-              alt="Hossam Logo"
-              // 3. Photographic Entrance: Adds a subtle blur that snaps into focus
+            <motion.div
               initial={{ opacity: 0, scale: 0.9, filter: "blur(10px)" }}
               animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-              // 4. Parallax Exit: The logo sinks back and blurs out just before the curtain pulls up
               exit={{ opacity: 0, scale: 0.95, y: -20, filter: "blur(5px)" }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            />
+              style={{
+                color: "#ffffff",
+                fontSize: "1.5rem",
+                fontWeight: "500",
+              }}
+            >
+              <TextType
+                text={"Hello, World!"}
+                variableSpeed={{
+                  min: 40,
+                  max: 100,
+                }} /* Slow, thoughtful human typing */
+                deletingSpeed={30} /* Smooth but deliberate erasing */
+                pauseDuration={2500} /* Long pause to let the words sink in */
+                showCursor={true}
+                cursorCharacter="|"
+                cursorBlinkDuration={0.8} /* Slightly slower, relaxed blink */
+              />
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -147,7 +157,7 @@ function App() {
             }
           >
             GET IN TOUCH
-            <img src={arrow} alt="Arrow" />
+            <img src={mail} alt="Arrow" />
           </button>
         </header>
 
