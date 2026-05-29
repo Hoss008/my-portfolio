@@ -183,7 +183,7 @@ function App() {
           <div className={styles.brandsSection}>
             <h3 className={styles.brandsTitle}>projects I’ve Built</h3>
             <ul className={styles.brandsList}>
-              <li
+              <a
                 className={styles.brandItem}
                 onMouseEnter={playHoverSound}
                 onClick={() =>
@@ -206,8 +206,8 @@ function App() {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </li>
-              <li className={styles.brandItem} onMouseEnter={playHoverSound}>
+              </a>
+              <a className={styles.brandItem} onMouseEnter={playHoverSound}>
                 <span>Fusion Form®</span>
                 <svg
                   width="12"
@@ -224,7 +224,7 @@ function App() {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </li>
+              </a>
               {/* <li className={styles.brandItem} onMouseEnter={playHoverSound}>
                 <span>Moud™</span>
                 <svg
@@ -243,7 +243,7 @@ function App() {
                   />
                 </svg>
               </li> */}
-              <li
+              <a
                 onClick={() =>
                   window.open(
                     "https://github.com/Hoss008/clinicly-frontend",
@@ -269,7 +269,7 @@ function App() {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </li>
+              </a>
               <li
                 onClick={() =>
                   window.open(
@@ -358,7 +358,8 @@ function App() {
                 className={styles.footerLink}
                 href={resume}
                 target="_blank"
-                rel="noreferrer"
+                  rel="noopener noreferrer"
+
               >
                 <img src={down} alt="Down" />
                 RESUME
