@@ -17,6 +17,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   width: 100%;
+  max-width: 100vw;
 }
 
 .pageWrapper {
@@ -24,6 +25,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -189,6 +191,8 @@ body {
   font-size: 16px;
   color: #ffffff;
   cursor: pointer;
+  text-decoration: none; /* Safari shows underline on <a> tags by default */
+  -webkit-tap-highlight-color: transparent; /* Remove Safari tap highlight */
   transition:
     opacity 0.2s ease,
     color 0.2s ease;

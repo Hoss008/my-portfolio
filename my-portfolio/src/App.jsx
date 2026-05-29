@@ -186,9 +186,9 @@ function App() {
               <a
                 className={styles.brandItem}
                 onMouseEnter={playHoverSound}
-                onClick={() =>
-                  window.open("https://norquestudios.com", "_blank")
-                }
+                href="https://norquestudios.com"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <span>Norque Studios™</span>
                 <svg
@@ -244,12 +244,9 @@ function App() {
                 </svg>
               </li> */}
               <a
-                onClick={() =>
-                  window.open(
-                    "https://github.com/Hoss008/clinicly-frontend",
-                    "_blank",
-                  )
-                }
+                href="https://github.com/Hoss008/clinicly-frontend"
+                target="_blank"
+                rel="noopener noreferrer"
                 className={styles.brandItem}
                 onMouseEnter={playHoverSound}
               >
@@ -270,13 +267,10 @@ function App() {
                   />
                 </svg>
               </a>
-              <li
-                onClick={() =>
-                  window.open(
-                    "https://github.com/Hoss008/react-ecommerce-project",
-                    "_blank",
-                  )
-                }
+              <a
+                href="https://github.com/Hoss008/react-ecommerce-project"
+                target="_blank"
+                rel="noopener noreferrer"
                 className={styles.brandItem}
                 onMouseEnter={playHoverSound}
               >
@@ -296,14 +290,11 @@ function App() {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </li>
-              <li
-                onClick={() =>
-                  window.open(
-                    "https://github.com/Hoss008/invoice-system-for-my-agency",
-                    "_blank",
-                  )
-                }
+              </a>
+              <a
+                href="https://github.com/Hoss008/invoice-system-for-my-agency"
+                target="_blank"
+                rel="noopener noreferrer"
                 className={styles.brandItem}
                 onMouseEnter={playHoverSound}
               >
@@ -323,7 +314,7 @@ function App() {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </li>
+              </a>
             </ul>
           </div>
 
@@ -331,35 +322,31 @@ function App() {
           <div className={styles.footerBottom}>
             <div className={styles.footerLinks}>
               <a
-                className={styles.brandItem}
+                className={`${styles.footerLink}`}
                 onMouseEnter={playHoverSound}
-                className={styles.footerLink}
                 href="https://www.linkedin.com/in/hossam-hassan80/"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
               >
                 <img src={down} alt="Down" />
                 LINKED IN
               </a>
               <a
-                className={styles.brandItem}
+                className={`${styles.footerLink}`}
                 onMouseEnter={playHoverSound}
-                className={styles.footerLink}
                 href="https://github.com/Hoss008"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
               >
                 <img src={down} alt="Down" />
                 GITHUB
               </a>
               <a
-                className={styles.brandItem}
+                className={`${styles.footerLink}`}
                 onMouseEnter={playHoverSound}
-                className={styles.footerLink}
                 href={resume}
                 target="_blank"
-                  rel="noopener noreferrer"
-
+                rel="noopener noreferrer"
               >
                 <img src={down} alt="Down" />
                 RESUME
