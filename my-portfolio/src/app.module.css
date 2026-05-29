@@ -93,9 +93,7 @@ body {
 
 .footer {
   display: grid;
-  grid-template-columns:
-    minmax(0, 204px) minmax(0, 204px) minmax(0, 204px)
-    minmax(0, 660px);
+  grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 1fr auto;
   gap: 14px;
   padding-inline: 48px;
@@ -108,7 +106,7 @@ body {
 }
 
 .p {
-  grid-column: 1 / span 3;
+  grid-column: 1 /6;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 30px;
@@ -149,6 +147,7 @@ body {
 }
 
 .inlineLink {
+  grid-column: 1/7; 
   color: inherit;
   text-decoration: underline;
   text-underline-offset: 1px;
@@ -157,12 +156,12 @@ body {
 
 /* --- BRANDS SECTION --- */
 .brandsSection {
-  grid-column: 4; /*[cite: 2] */
-  grid-row: 1 / -1; /* Spans all rows to reach the absolute bottom */
+  grid-column: 7/13; /*[cite: 2] */
+  grid-row: 1 / 1; 
   display: flex; /*[cite: 2] */
   flex-direction: column; /*[cite: 2] */
   gap: 12px; /*[cite: 2] */
-  align-self: end; /* Snaps it flush to the bottom */
+  align-self: end; 
 }
 .brandsTitle {
   font-family: "Roboto", sans-serif;
