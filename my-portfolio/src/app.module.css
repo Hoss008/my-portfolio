@@ -252,7 +252,7 @@ body {
 /* =========================================
    MOBILE (MAX-WIDTH: 767px)
 ========================================= */
-@media (max-width: 767px) {
+@media (max-width: 402px) {
   /* --- HEADER UPDATES --- */
   /* --- HEADER UPDATES --- */
   .header {
