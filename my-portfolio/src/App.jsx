@@ -82,16 +82,15 @@ function App() {
           <motion.div
             key="loader"
             initial={{ opacity: 1 }}
-            // 1. The "Curtain Pull": Slides the entire black screen up and away
             exit={{ y: "-100vh", opacity: 0 }}
-            // 2. The Golden Curve: A signature easing bezier used in high-end UI
             transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
             style={{
               position: "fixed",
-              top: 0,
-              left: 0,
+              // 1. inset: 0 replaces top: 0 and left: 0. It locks the div to all 4 edges.
+              inset: 0,
               width: "100vw",
-              height: "100vh",
+              // 2. 100dvh adapts dynamically when mobile browser bars shrink or expand
+              height: "100dvh",
               backgroundColor: "#000000",
               display: "flex",
               alignItems: "center",
@@ -116,11 +115,11 @@ function App() {
                   min: 40,
                   max: 100,
                 }}
-                deletingSpeed={30} 
-                pauseDuration={2500} 
+                deletingSpeed={30}
+                pauseDuration={2500}
                 showCursor={true}
                 cursorCharacter="_"
-                cursorBlinkDuration={0.8} /* Slightly slower, relaxed blink */
+                cursorBlinkDuration={0.8}
               />
             </motion.div>
           </motion.div>
