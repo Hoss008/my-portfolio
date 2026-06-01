@@ -135,15 +135,58 @@ body {
   gap: 48px;
 }
 
+/* 1. The Parent Container (Handles alignment and spacing) */
 .footerLink {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  text-decoration: underline;
-  text-underline-offset: 6px;
-  text-decoration-color: #555555;
   cursor: pointer;
-  color: inherit;
+  text-decoration: none; 
+  color: #888888; 
+}
+
+/* 2. The Text Wrapper (Handles the lines and color change) */
+.linkText {
+  position: relative;
+  padding-bottom: 3px; 
+  transition: color 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* Brighten text when the parent is hovered */
+.footerLink:hover .linkText {
+  color: #ffffff;
+}
+
+/* 3. The Permanent Grey Base Line */
+.linkText::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #555555;
+}
+
+/* 4. The Bright White Sweep Line */
+.linkText::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #ffffff;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+  z-index: 1;
+}
+
+/* Trigger the sweep when the parent is hovered */
+.footerLink:hover .linkText::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .inlineLink {

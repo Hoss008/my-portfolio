@@ -342,7 +342,7 @@ function App() {
                 rel="noopener noreferrer"
               >
                 <img src={down} alt="Down" />
-                LINKED IN
+                <span className={styles.linkText}>LINKED IN</span>
               </a>
               <a
                 className={`${styles.footerLink}`}
@@ -352,7 +352,7 @@ function App() {
                 rel="noopener noreferrer"
               >
                 <img src={down} alt="Down" />
-                GITHUB
+                <span className={styles.linkText}>GITHUB</span>
               </a>
               <a
                 className={`${styles.footerLink}`}
@@ -362,7 +362,7 @@ function App() {
                 rel="noopener noreferrer"
               >
                 <img src={down} alt="Down" />
-                RESUME
+                <span className={styles.linkText}>RESUME</span>
               </a>
             </div>
           </div>
