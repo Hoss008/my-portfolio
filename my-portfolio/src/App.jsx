@@ -172,7 +172,8 @@ function App() {
               className={styles.inlineLink}
               href="https://norquestudios.com/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
+              onTouchStart={() => {}}
             >
               NORQUE STUDIOS™
             </a>
@@ -189,6 +190,7 @@ function App() {
                 href="https://norquestudios.com"
                 target="_blank"
                 rel="noopener noreferrer"
+                onTouchStart={() => {}}
               >
                 <span>Norque Studios™</span>
                 <svg
