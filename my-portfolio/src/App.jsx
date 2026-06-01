@@ -146,19 +146,31 @@ function App() {
               </svg>
             </div>
           </div>
-
           <div className={styles.title}>PERSONAL PORTFOLIO</div>
-
-          <button
-            className={styles.talk}
+          <motion.button
             onMouseEnter={playHoverSound}
+            className={styles.talk}
             onClick={() =>
               (window.location.href = "mailto:hossamhassan2001.hh@gmail.com")
             }
+            // Just a tiny, barely-there scale for tactile feedback
+            whileHover="hover"
+            whileTap={{ scale: 0.98 }}
           >
             GET IN TOUCH
-            <img src={mail} alt="Arrow" />
-          </button>
+            <motion.img
+              src={mail}
+              alt="Mail"
+              variants={{
+                hover: {
+                  x: 4, // Pushes right 4px
+                  y: -2, // Lifts up 2px
+                  rotate: 5, // Tiny tilt
+                },
+              }}
+              transition={{ duration: 0.3, ease: [0.76, 0, 0.24, 1] }}
+            />
+          </motion.button>
         </header>
 
         <main className={styles.mainContent}> </main>
