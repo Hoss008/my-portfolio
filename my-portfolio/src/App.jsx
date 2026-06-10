@@ -8,10 +8,10 @@ import hoverSound from "./assets/zapsplatt.wav";
 import resume from "./assets/Hossam Hassan.pdf";
 import { motion, AnimatePresence } from "framer-motion";
 import TextType from "../Animation";
+import SplitText from "../Split";
 
 function App() {
   const [audioUnlocked, setAudioUnlocked] = useState(false);
-  // 1. ADDED: Global loading state
   const [isLoading, setIsLoading] = useState(true);
   const [time, setTime] = useState("");
   const audioRef = useRef(new Audio(hoverSound));
@@ -21,7 +21,6 @@ function App() {
     audio.volume = 0.2;
     audio.currentTime = 0;
     audio.play().catch((err) => console.log("Audio play failed:", err));
-    // Stop the sound after 200ms to make it shorter
     setTimeout(() => {
       audio.pause();
     }, 50);
@@ -42,10 +41,8 @@ function App() {
       .catch(() => {});
   }, [audioUnlocked]);
 
-  // 2. ADDED: Initial Load Effect
   useEffect(() => {
     const handleComplete = () => {
-      // 800ms delay ensures the loader doesn't violently flash on fast connections
       setTimeout(() => setIsLoading(false), 1600);
     };
 
@@ -57,7 +54,6 @@ function App() {
     }
   }, []);
 
-  // Existing Time Effect
   useEffect(() => {
     const formatTime = (date) =>
       date.toLocaleTimeString("en-US", {
@@ -86,10 +82,8 @@ function App() {
             transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
             style={{
               position: "fixed",
-              // 1. inset: 0 replaces top: 0 and left: 0. It locks the div to all 4 edges.
               inset: 0,
               width: "100vw",
-              // 2. 100dvh adapts dynamically when mobile browser bars shrink or expand
               height: "100dvh",
               backgroundColor: "#000000",
               display: "flex",
@@ -153,7 +147,6 @@ function App() {
             onClick={() =>
               (window.location.href = "mailto:hossamhassan2001.hh@gmail.com")
             }
-            // Just a tiny, barely-there scale for tactile feedback
             whileHover="hover"
             whileTap={{ scale: 0.98 }}
           >
@@ -163,9 +156,9 @@ function App() {
               alt="Mail"
               variants={{
                 hover: {
-                  x: 4, // Pushes right 4px
-                  y: -2, // Lifts up 2px
-                  rotate: 5, // Tiny tilt
+                  x: 4,
+                  y: -2,
+                  rotate: 5,
                 },
               }}
               transition={{ duration: 0.3, ease: [0.76, 0, 0.24, 1] }}
@@ -176,21 +169,23 @@ function App() {
         <main className={styles.mainContent}> </main>
 
         <footer className={styles.footer}>
-          <p className={styles.p}>
-            It’s Hossam! <br />
-            Frontend Developer & Co-Founder of{" "}
-            <a
-              className={styles.inlineLink}
-              href="https://norquestudios.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              onTouchStart={() => {}}
-            >
-              NORQUE STUDIOS™
-            </a>
-            . I build fast, polished interfaces with clean architecture, smooth
-            animations, and maintainable code.
-          </p>
+          <SplitText
+            text={
+              "It's Hossam!\nFrontend Developer & Co-Founder of NORQUE STUDIOS™. I build fast, polished interfaces with clean architecture, smooth animations, and maintainable code."
+            }
+            tag="p"
+            className={styles.p}
+            splitType="words,lines"
+            delay={25}
+            duration={0.5}
+            // FIX: Converted to a string so the clock doesn't destroy the animation
+            ease="cubic-bezier(1, 0, 0, 0.98)" 
+            from={{ opacity: 1, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
+            textAlign="left"
+            startDelay={1.8}
+            useScrollTrigger={true}
+          />
 
           <div className={styles.brandsSection}>
             <h3 className={styles.brandsTitle}>projects I’ve Built</h3>
@@ -238,24 +233,6 @@ function App() {
                   />
                 </svg>
               </a>
-              {/* <li className={styles.brandItem} onMouseEnter={playHoverSound}>
-                <span>Moud™</span>
-                <svg
-                  width="12"
-                  height="12"
-                  viewBox="0 0 12 12"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1 11L11 1M11 1H3M11 1V9"
-                    stroke="white"
-                    strokeWidth="1.2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </li> */}
               <a
                 href="https://github.com/Hoss008/clinicly-frontend"
                 target="_blank"
@@ -331,7 +308,6 @@ function App() {
             </ul>
           </div>
 
-          {/* Added Footer Bottom Links */}
           <div className={styles.footerBottom}>
             <div className={styles.footerLinks}>
               <a

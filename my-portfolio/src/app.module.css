@@ -282,7 +282,7 @@ body {
     padding-inline: 32px;
   }
 
-  .p,
+  .p
   .footerBottom {
     grid-column: 1 / 5; /* Left content takes up 4 columns */
   }
