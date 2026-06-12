@@ -169,23 +169,36 @@ function App() {
         <main className={styles.mainContent}> </main>
 
         <footer className={styles.footer}>
-          <SplitText
-            text={
-              "It's Hossam!\nFrontend Developer & Co-Founder of NORQUE STUDIOS™. I build fast, polished interfaces with clean architecture, smooth animations, and maintainable code."
-            }
-            tag="p"
-            className={styles.p}
-            splitType="words,lines"
-            delay={25}
-            duration={0.5}
-            // FIX: Converted to a string so the clock doesn't destroy the animation
-            ease="cubic-bezier(1, 0, 0, 0.98)" 
-            from={{ opacity: 1, y: 40 }}
-            to={{ opacity: 1, y: 0 }}
-            textAlign="left"
-            startDelay={1.8}
-            useScrollTrigger={true}
-          />
+          <div className={styles.p} style={{ textAlign: "left" }}>
+            <SplitText
+              tag="p"
+              className={styles.p}
+              splitType="words,lines"
+              delay={25}
+              duration={0.5}
+              ease="cubic-bezier(1, 0, 0, 0.98)"
+              from={{ opacity: 1, y: 40 }}
+              to={{ opacity: 1, y: 0 }}
+              textAlign="left"
+              startDelay={1.8}
+              useScrollTrigger={true}
+            >
+              It's Hossam!
+              <br />
+              Frontend Developer & Co-Founder of
+              <a
+                className={styles.inlineLink}
+                // href="https://norquestudios.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                onMouseEnter={playHoverSound}
+              >
+                {" NORQUE STUDIOS™"}
+              </a>
+              . I build fast, polished interfaces with clean architecture,
+              smooth animations, and maintainable code.
+            </SplitText>
+          </div>
 
           <div className={styles.brandsSection}>
             <h3 className={styles.brandsTitle}>projects I’ve Built</h3>

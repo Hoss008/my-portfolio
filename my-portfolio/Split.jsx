@@ -8,6 +8,7 @@ gsap.registerPlugin(ScrollTrigger, GSAPSplitText, useGSAP);
 
 const SplitText = ({
   text,
+  children,
   className = "",
   delay = 1.1,
   duration = 0.8,
@@ -42,7 +43,7 @@ const SplitText = ({
 
   useGSAP(
     () => {
-      if (!ref.current || !text || !fontsLoaded) return;
+      if (!ref.current || (!text && !children) || !fontsLoaded) return;
       
       // FIX: Commented out so the animation runs when the page loads!
       // if (animationCompletedRef.current) return;
@@ -153,7 +154,7 @@ const SplitText = ({
 
     return (
       <Tag ref={ref} style={style} className={className}>
-        {text}
+        {children || text}
       </Tag>
     );
   };
