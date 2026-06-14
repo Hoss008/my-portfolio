@@ -185,17 +185,8 @@ function App() {
             >
               It's Hossam!
               <br />
-              Frontend Developer & Co-Founder of
-              <a
-                className={styles.inlineLink}
-                // href="https://norquestudios.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                onMouseEnter={playHoverSound}
-              >
-                {" NORQUE STUDIOS™"}
-              </a>
-              . I build fast, polished interfaces with clean architecture,
+              Frontend Developer & Co-Founder of NORQUE STUDIOS™.
+             I build fast, polished interfaces with clean architecture,
               smooth animations, and maintainable code.
             </SplitText>
           </div>

@@ -116,7 +116,7 @@ body {
   max-width: 536px;
   margin: 0;
   align-self: end; /* Pushes the text down to meet the links */
-  margin-bottom: 1rem; /* Adjust this number to get the exact gap you want */
+  margin-bottom: 0.5rem; /* Adjust this number to get the exact gap you want */
 }
 
 .footerBottom {
