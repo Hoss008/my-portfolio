@@ -383,7 +383,6 @@ const handleMouseLeave = () => {
       <span className={styles.sectionTitle}>Core Frontend</span>
       <ul className={styles.skillsList}>
         <li>React</li>
-        <li>Angular</li>
         <li>Zustand</li>
         <li>TanStack Query</li>
       </ul>
