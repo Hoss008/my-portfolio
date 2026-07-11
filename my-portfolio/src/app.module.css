@@ -120,13 +120,13 @@ body {
 }
 
 .footerBottom {
-  display: flex; /* Simplified from grid */
-  grid-column: 1 / span 3; /* Restricts the container to the left side */
-  gap: 14px; /*[cite: 2] */
-  font-family: "Roboto Mono", monospace; /*[cite: 2] */
-  font-size: 14px; /*[cite: 2] */
-  color: #888888; /*[cite: 2] */
-  align-items: end; /*[cite: 2] */
+  display: flex; 
+  grid-column: 1 / 6; /* Expanded from '1 / span 3' to match the paragraph width above it */
+  gap: 14px; 
+  font-family: "Roboto Mono", monospace; 
+  font-size: 14px; 
+  color: #888888; 
+  align-items: end; 
 }
 
 .footerLinks {
@@ -143,6 +143,7 @@ body {
   cursor: pointer;
   text-decoration: none; 
   color: #888888; 
+  white-space: nowrap; /* CRITICAL: Forces the text to stay on one single line */
 }
 
 /* 2. The Text Wrapper (Handles the lines and color change) */
@@ -259,6 +260,91 @@ body {
 }
 
 /* =========================================
+   SKILLS CARD STYLES
+========================================= */
+
+.skillsWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.skillsTrigger {
+  cursor: default; /* Overrides the pointer since it doesn't navigate away */
+}
+
+.skillsCard {
+  position: absolute;
+  bottom: calc(100% + 15px); /* Forces the card to pop UP from the footer */
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  width: 220px;
+  background-color: #0A0A0A;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  overflow: hidden;
+  pointer-events: none; /* Prevents ghost hovering when hidden */
+}
+
+/* Show card on wrapper hover */
+.skillsWrapper:hover .skillsCard {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto; /* Re-enables interactions when visible */
+}
+
+/* Internal Card Typography & Spacing */
+.skillsSection {
+  margin-bottom: 20px;
+}
+
+.skillsSection:last-child {
+  margin-bottom: 0;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sectionTitle {
+  display: block;
+  color: #666;
+  font-size: 11px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.skillsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #E0E0E0;
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   MOBILE ADJUSTMENTS FOR SKILLS CARD
+========================================= */
+@media (max-width: 767px) {
+  .skillsCard {
+    /* Adjusts the alignment on mobile so it doesn't bleed off the left screen edge */
+    left: 0;
+    transform: translateX(0) translateY(10px);
+  }
+  
+  .skillsWrapper:hover .skillsCard {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+/* =========================================
    TABLET (8-COLUMN GRID)
    Max-width: 1024px
 ========================================= */
@@ -282,11 +368,10 @@ body {
     padding-inline: 32px;
   }
 
-  .p
+.p,
   .footerBottom {
     grid-column: 1 / 5; /* Left content takes up 4 columns */
   }
-
   .brandsSection {
     grid-column: 5 / -1; /* Projects take up the remaining 4 columns */
   }

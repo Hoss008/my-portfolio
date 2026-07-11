@@ -16,6 +16,26 @@ function App() {
   const [time, setTime] = useState("");
   const audioRef = useRef(new Audio(hoverSound));
 
+  const cardRef = useRef(null);
+
+const handleMouseMove = (e) => {
+  if (!cardRef.current) return;
+  const rect = cardRef.current.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+  
+  cardRef.current.style.background = `radial-gradient(
+    circle at ${x}px ${y}px, 
+    rgba(255, 255, 255, 0.06), 
+    #0A0A0A 40%
+  )`;
+};
+
+const handleMouseLeave = () => {
+  if (!cardRef.current) return;
+  cardRef.current.style.background = '#0A0A0A';
+};
+
   const playHoverSound = useCallback(() => {
     const audio = audioRef.current;
     audio.volume = 0.2;
@@ -343,6 +363,51 @@ function App() {
                 <img src={down} alt="Down" />
                 <span className={styles.linkText}>RESUME</span>
               </a>
+              {/* --- NEW SKILLS SECTION --- */}
+<div className={styles.skillsWrapper}>
+  <div 
+    className={`${styles.footerLink} ${styles.skillsTrigger}`}
+    onMouseEnter={playHoverSound}
+  >
+    <img src={down} alt="Down" />
+    <span className={styles.linkText}>SKILLS</span>
+  </div>
+
+  <div 
+    className={styles.skillsCard} 
+    ref={cardRef}
+    onMouseMove={handleMouseMove}
+    onMouseLeave={handleMouseLeave}
+  >
+    <div className={styles.skillsSection}>
+      <span className={styles.sectionTitle}>Core Frontend</span>
+      <ul className={styles.skillsList}>
+        <li>React</li>
+        <li>Angular</li>
+        <li>Zustand</li>
+        <li>TanStack Query</li>
+      </ul>
+    </div>
+    
+    <div className={styles.skillsSection}>
+      <span className={styles.sectionTitle}>Motion & Layout</span>
+      <ul className={styles.skillsList}>
+        <li>GSAP</li>
+        <li>Framer Motion</li>
+        <li>Tailwind CSS</li>
+      </ul>
+    </div>
+
+    <div className={styles.skillsSection}>
+      <span className={styles.sectionTitle}>Backend</span>
+      <ul className={styles.skillsList}>
+        <li>Node.js</li>
+        <li>Express</li>
+      </ul>
+    </div>
+  </div>
+</div>
+{/* --------------------------- */}
             </div>
           </div>
         </footer>
