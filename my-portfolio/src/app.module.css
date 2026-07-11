@@ -319,6 +319,15 @@ body {
   letter-spacing: 0.5px;
 }
 
+.skillsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #E0E0E0; /* <-- KEEPS SKILLS TEXT OFF-WHITE */
+  /* font-family: "Roboto", sans-serif; */
+  /* font-size: 13px; */
+  /* line-height: 1.8; */
+}
 /* Add flexbox to the list items to align the icon and text */
 .skillsList li {
   display: flex;
