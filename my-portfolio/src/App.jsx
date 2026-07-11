@@ -402,6 +402,7 @@ const handleMouseLeave = () => {
       <ul className={styles.skillsList}>
         <li>Node.js</li>
         <li>Express</li>
+        <li>MongoDB</li>
       </ul>
     </div>
   </div>
