@@ -382,27 +382,125 @@ function App() {
                   <div className={styles.skillsSection}>
                     <span className={styles.sectionTitle}>Core Frontend</span>
                     <ul className={styles.skillsList}>
-                      <li>React</li>
-                      <li>JavaScript</li>
-                      <li>Zustand</li>
+                      <li>
+                        <svg
+                          viewBox="-11.5 -10.23174 23 20.46348"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          >
+                          <circle cx="0" cy="0" r="2.05" fill="currentColor" />
+                          <g stroke="currentColor" strokeWidth="1">
+                            <ellipse rx="11" ry="4.2" />
+                            <ellipse rx="11" ry="4.2" transform="rotate(60)" />
+                            <ellipse rx="11" ry="4.2" transform="rotate(120)" />
+                          </g>
+                        </svg>
+                          <span>React</span>
+                      </li>
+                      <li>
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H24V24H0V0ZM18.3467 20.1196C17.2343 20.1196 16.6053 19.5394 16.1219 18.7501L14.2891 19.8149C14.9512 21.123 16.3044 22.1211 18.3989 22.1211C20.5409 22.1211 22.136 21.0088 22.136 18.9783C22.136 17.0949 21.0541 16.2571 19.1379 15.4354L18.5741 15.1939C17.6065 14.7749 17.1874 14.501 17.1874 13.8244C17.1874 13.277 17.6061 12.8579 18.2667 12.8579C18.9143 12.8579 19.3314 13.131 19.7181 13.8244L21.4743 12.6968C20.7314 11.3901 19.7006 10.891 18.2667 10.891C16.2526 10.891 14.9638 12.1787 14.9638 13.8701C14.9638 15.7063 16.0449 16.5749 17.6724 17.2682L18.2362 17.5101C19.2648 17.96 19.8781 18.2339 19.8781 19.0072C19.8781 19.6526 19.2811 20.1196 18.3467 20.1196ZM9.60647 20.1055C8.83161 20.1055 8.50933 19.5741 8.15504 18.9455L6.31923 20.057C6.85104 21.1825 7.89676 22.117 9.70247 22.117C11.7009 22.117 13.0701 21.0541 13.0701 18.7189V11.0198H10.8149V18.6884C10.8149 19.8156 10.3474 20.1055 9.60647 20.1055Z" fill="#818589"></path> </g></svg>
+                        <span>JavaScript</span>
+                      </li>
+
+                      <li>
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          >
+                          <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                          <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                          <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                        </svg>
+                          <span>Zustand</span>
+                      </li>
                     </ul>
                   </div>
 
                   <div className={styles.skillsSection}>
                     <span className={styles.sectionTitle}>UI & Animation</span>
                     <ul className={styles.skillsList}>
-                      <li>GSAP</li>
-                      <li>Framer Motion</li>
-                      <li>Tailwind CSS</li>
+                      <li>
+                        {/* GSAP Wordmark */}
+                        <svg viewBox="0 0 34 14" fill="currentColor">
+                          <text
+                            x="0"
+                            y="11"
+                            font-family="Impact, sans-serif"
+                            font-weight="900"
+                            font-size="12"
+                            font-style="italic"
+                            letter-spacing="-0.5"
+                          >
+                            GSAP
+                          </text>
+                        </svg>
+                        <span>GSAP</span>
+                      </li>
+                      <li>
+                        {/* Framer Motion (Official Logo Shape) */}
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M5 2h14v7h-7z M5 9h7l7 7H5z M5 16h7v7z" />
+                        </svg>
+                        <span>Framer Motion</span>
+                      </li>
+                      <li>
+                        {/* Tailwind CSS (Official Waves) */}
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z" />
+                        </svg>
+                        <span>Tailwind CSS</span>
+                      </li>
                     </ul>
                   </div>
 
                   <div className={styles.skillsSection}>
                     <span className={styles.sectionTitle}>Backend</span>
                     <ul className={styles.skillsList}>
-                      <li>Node.js</li>
-                      <li>Express</li>
-                      <li>MongoDB</li>
+                      <li>
+                        {/* Node.js (3D Hexagon Block) */}
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                          <path d="M2 17l10 5 10-5" />
+                          <path d="M2 7v10" />
+                          <path d="M22 7v10" />
+                          <path d="M12 12v10" />
+                        </svg>
+                        <span>Node.js</span>
+                      </li>
+                      <li>
+                        {/* Express (Terminal / Server) */}
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <rect x="2" y="3" width="20" height="14" rx="2" />
+                          <line x1="8" y1="21" x2="16" y2="21" />
+                          <line x1="12" y1="17" x2="12" y2="21" />
+                          <polyline points="6 8 8 10 6 12" />
+                          <line x1="10" y1="12" x2="14" y2="12" />
+                        </svg>
+                        <span>Express</span>
+                      </li>
+                      <li>
+                        {/* MongoDB (Official Leaf Shape) */}
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 2C12 2 8 6.5 8 12c0 3 1.5 5.5 3.5 6.5.5.25 1 .5 1.5.5v3h1v-3c.5 0 1-.25 1.5-.5C17.5 17.5 19 15 19 12c0-5.5-4-10-7-10zm0 14c-1.5 0-3-1.5-3-4 0-2.5 1.5-5 3-7 1.5 2 3 4.5 3 7 0 2.5-1.5 4-3 4z" />
+                        </svg>
+                        <span>MongoDB</span>
+                      </li>
                     </ul>
                   </div>
                 </div>
