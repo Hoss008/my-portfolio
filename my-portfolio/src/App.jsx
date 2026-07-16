@@ -371,7 +371,7 @@ function App() {
                 rel="noopener noreferrer"
               >
                 <img src={down} alt="Down" />
-                <span className={styles.linkText}>LINKED IN</span>
+                <span className={styles.linkText}>LINKEDIN</span>
               </a>
               <a
                 className={`${styles.footerLink}`}
