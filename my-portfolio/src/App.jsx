@@ -238,8 +238,38 @@ function App() {
                   />
                 </svg>
               </a>
-              <a className={styles.brandItem} onMouseEnter={playHoverSound}>
+              <a className={styles.brandItem} onMouseEnter={playHoverSound}
+              href="https://www.fusionformad.com"
+              target="_blank"
+                rel="noopener noreferrer"
+                className={styles.brandItem}
+                onMouseEnter={playHoverSound}
+              >
                 <span>Fusion Form®</span>
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1 11L11 1M11 1H3M11 1V9"
+                    stroke="white"
+                    strokeWidth="1.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </a>
+              <a className={styles.brandItem} onMouseEnter={playHoverSound}
+              href="https://amk-sol.com"
+              target="_blank"
+                rel="noopener noreferrer"
+                className={styles.brandItem}
+                onMouseEnter={playHoverSound}
+              >
+                <span>MAKH Horizon</span>
                 <svg
                   width="12"
                   height="12"
