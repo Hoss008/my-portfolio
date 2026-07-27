@@ -20,6 +20,12 @@ body {
   max-width: 100vw;
 }
 
+@media (min-width: 1441px) {
+  html {
+    font-size: clamp(16px, 0.95vw, 24.32px);
+  }
+}
+
 .pageWrapper {
   min-height: 100vh;
   display: flex;
@@ -38,9 +44,9 @@ body {
   grid-template-columns: repeat(12, 1fr);
   align-items: center;
   height: auto;
-  padding-inline: 48px;
-  padding-block: 24px;
-  gap: 24px;
+  padding-inline: 3rem;
+  padding-block: 1.5rem;
+  gap: 1.5rem;
 }
 
 .text {
@@ -52,21 +58,31 @@ body {
   grid-column: 1/6;
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 1.5rem;
   min-width: 0;
+}
+
+.left > img {
+  width: 6.875rem;
+  height: auto;
 }
 
 .locationGroup {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 0.25rem;
+}
+
+.locationGroup svg {
+  width: 1rem;
+  height: 1rem;
 }
 
 .title {
   grid-column: 7/12;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 100%;
   letter-spacing: 0%;
   text-transform: uppercase;
@@ -76,32 +92,37 @@ body {
 .talk {
   font-family: "Roboto Condensed", sans-serif;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 100%;
   display: inline-flex;
   align-items: center;
   justify-self: end;
-  border-radius: 4px;
-  border: 1px solid white;
-  height: 41px;
-  gap: 10px;
-  padding: 0 16px;
+  border-radius: 0.25rem;
+  border: 0.0625rem solid white;
+  height: 2.5625rem;
+  gap: 0.625rem;
+  padding: 0 1rem;
   cursor: pointer;
   white-space: nowrap;
   text-decoration: none;
+}
+
+.talk img {
+  width: 1rem;
+  height: 1rem;
 }
 
 .footer {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 1fr auto;
-  gap: 14px;
-  padding-inline: 48px;
-  padding-block: 12px;
+  gap: 0.875rem;
+  padding-inline: 3rem;
+  padding-block: 0.75rem;
 
   /* --- UPDATE THESE LINES --- */
   height: auto; /* Changed from 240px so the 6 projects fit naturally */
-  padding-bottom: 48px; /* Replaces the margin with internal padding to prevent scroll */
+  padding-bottom: 3rem; /* Replaces the margin with internal padding to prevent scroll */
   align-items: end;
 }
 
@@ -109,11 +130,11 @@ body {
   grid-column: 1 /6;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  font-size: 30px;
+  font-size: 1.875rem;
   line-height: 100%;
   letter-spacing: 0%;
   width: 100%;
-  max-width: 536px;
+  max-width: 33.5rem;
   margin: 0;
   align-self: end; /* Pushes the text down to meet the links */
   margin-bottom: 0.5rem; /* Adjust this number to get the exact gap you want */
@@ -122,9 +143,9 @@ body {
 .footerBottom {
   display: flex; 
   grid-column: 1 / 6; /* Expanded from '1 / span 3' to match the paragraph width above it */
-  gap: 14px; 
+  gap: 0.875rem; 
   font-family: "Roboto Mono", monospace; 
-  font-size: 14px; 
+  font-size: 0.875rem; 
   color: #888888; 
   align-items: end; 
 }
@@ -132,24 +153,29 @@ body {
 .footerLinks {
   grid-column: 1 / span 3;
   display: flex;
-  gap: 48px;
+  gap: 3rem;
 }
 
 /* 1. The Parent Container (Handles alignment and spacing) */
 .footerLink {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 0.25rem;
   cursor: pointer;
   text-decoration: none; 
   color: #888888; 
   white-space: nowrap; /* CRITICAL: Forces the text to stay on one single line */
 }
 
+.footerLink img {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
 /* 2. The Text Wrapper (Handles the lines and color change) */
 .linkText {
   position: relative;
-  padding-bottom: 3px; 
+  padding-bottom: 0.1875rem; 
   transition: color 0.4s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
@@ -165,7 +191,7 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 1px;
+  height: 0.0625rem;
   background-color: #555555;
 }
 
@@ -176,7 +202,7 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 1px;
+  height: 0.0625rem;
   background-color: #ffffff;
   transform: scaleX(0);
   transform-origin: bottom right;
@@ -194,7 +220,7 @@ body {
   grid-column: 1/7; 
   color: inherit;
   text-decoration: underline;
-  text-underline-offset: 1px;
+  text-underline-offset: 0.0625rem;
   text-decoration-color: #ffffff;
 }
 
@@ -204,16 +230,16 @@ body {
   grid-row: 1 / 1; 
   display: flex; /*[cite: 2] */
   flex-direction: column; /*[cite: 2] */
-  gap: 12px; /*[cite: 2] */
+  gap: 0.75rem; /*[cite: 2] */
   align-self: end; 
 }
 .brandsTitle {
   font-family: "Roboto", sans-serif;
-  font-size: 12px;
+  font-size: 0.75rem;
   color: #888888;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-bottom: 4px;
+  margin-bottom: 0.25rem;
   font-weight: 500;
 }
 
@@ -228,10 +254,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-block: 14px;
-  border-top: 1px solid #333333; /* Clean separator lines */
+  padding-block: 0.875rem;
+  border-top: 0.0625rem solid #333333; /* Clean separator lines */
   font-family: "Roboto", sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   color: #ffffff;
   cursor: pointer;
   text-decoration: none; /* Safari shows underline on <a> tags by default */
@@ -243,7 +269,7 @@ body {
 
 /* Ensure the bottom border completes the list frame */
 .brandItem:last-child {
-  border-bottom: 1px solid #333333;
+  border-bottom: 0.0625rem solid #333333;
 }
 
 .brandItem:hover {
@@ -251,12 +277,14 @@ body {
 }
 
 .brandItem svg {
+  width: 0.75rem;
+  height: 0.75rem;
   transition: transform 0.2s ease;
 }
 
 /* Optional smooth hover animation for the arrow */
 .brandItem:hover svg {
-  transform: translate(2px, -2px);
+  transform: translate(0.125rem, -0.125rem);
 }
 
 /* =========================================
@@ -274,18 +302,18 @@ body {
 
 .skillsCard {
   position: absolute;
-  bottom: calc(100% + 15px); /* Forces the card to pop UP from the footer */
+  bottom: calc(100% + 0.9375rem); /* Forces the card to pop UP from the footer */
   left: 50%;
-  transform: translateX(-50%) translateY(10px);
-  width: 220px;
+  transform: translateX(-50%) translateY(0.625rem);
+  width: 13.75rem;
   background-color: #0A0A0A;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  padding: 20px;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  padding: 1.25rem;
   opacity: 0;
   visibility: hidden;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.5);
   z-index: 100;
   overflow: hidden;
   pointer-events: none; /* Prevents ghost hovering when hidden */
@@ -301,22 +329,22 @@ body {
 
 /* Internal Card Typography & Spacing */
 .skillsSection {
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 .skillsSection:last-child {
   margin-bottom: 0;
-  padding-top: 15px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 0.9375rem;
+  border-top: 0.0625rem solid rgba(255, 255, 255, 0.05);
 }
 
 .sectionTitle {
   display: block;
   color: #666;
-  font-size: 11px;
+  font-size: 0.6875rem;
   text-transform: uppercase;
-  margin-bottom: 8px;
-  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.03125rem;
 }
 
 .skillsList {
@@ -332,14 +360,14 @@ body {
 .skillsList li {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 8px; /* Adds a little breathing room between skills */
+  gap: 0.625rem;
+  margin-bottom: 0.5rem; /* Adds a little breathing room between skills */
 }
 
 /* Forces all SVGs to be uniform in size and inherit the clean text color */
 .skillsList li svg {
-  width: 14px;
-  height: 14px;
+  width: 0.875rem;
+  height: 0.875rem;
   color: #888888; /* Subtle grey for the icon */
   transition: color 0.3s ease;
 }
