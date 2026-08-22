@@ -269,7 +269,7 @@ function App() {
                 className={styles.brandItem}
                 onMouseEnter={playHoverSound}
               >
-                <span>MAKH Horizon</span>
+                <span>Makh Horizon</span>
                 <svg
                   width="12"
                   height="12"
