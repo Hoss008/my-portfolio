@@ -5,7 +5,7 @@ import arrow from "./assets/arrow.svg";
 import mail from "./assets/mail.svg";
 import down from "./assets/down.svg";
 import hoverSound from "./assets/zapsplatt.wav";
-import resume from "./assets/HossamHassan.pdf";
+import resume from "./assets/Hossam'sCV.pdf";
 import { motion, AnimatePresence } from "framer-motion";
 import TextType from "../Animation";
 import SplitText from "../Split";
