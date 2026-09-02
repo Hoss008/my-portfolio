@@ -9,6 +9,7 @@ import resume from "./assets/Hossam'sCV.pdf";
 import { motion, AnimatePresence } from "framer-motion";
 import TextType from "../Animation";
 import SplitText from "../Split";
+import * as Sentry from '@sentry/react';
 
 function App() {
   const [audioUnlocked, setAudioUnlocked] = useState(false);
@@ -139,6 +140,8 @@ function App() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      
 
       <div className={styles.pageWrapper}>
         <header className={styles.header}>
