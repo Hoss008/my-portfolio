@@ -1,6 +1,6 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App.jsx";
 import * as Sentry from "@sentry/react";
 
 Sentry.init({
@@ -10,11 +10,13 @@ Sentry.init({
     // https://docs.sentry.io/platforms/javascript/guides/react/configuration/options/#dataCollection
     // userInfo: false,
     // httpBodies: []
-  }
+  },
 });
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
+    <Sentry.ErrorBoundary fallback={<p>Something went wrong.</p>}>
+      <App />
+    </Sentry.ErrorBoundary>
   </StrictMode>,
-)
+);
