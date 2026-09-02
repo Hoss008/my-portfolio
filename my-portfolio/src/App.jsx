@@ -212,7 +212,13 @@ function App() {
               production-ready websites and React applications for businesses.
             </SplitText>
           </div>
-
+<button
+      onClick={() => {
+        throw new Error('This is your first error!');
+      }}
+    >
+      Break the world
+    </button>
           <div className={styles.brandsSection}>
             <h3 className={styles.brandsTitle}>projects I’ve Built</h3>
             <ul className={styles.brandsList}>
