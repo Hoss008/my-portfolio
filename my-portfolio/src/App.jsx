@@ -206,7 +206,7 @@ function App() {
             >
               It's Hossam!
               <br />
-              Frontend Developer & Co-Founder of NORQUE STUDIOS™. I've delivered
+              Software Engineer & Co-Founder of NORQUE STUDIOS™. I've delivered
               production-ready websites and React applications for businesses.
             </SplitText>
           </div>
